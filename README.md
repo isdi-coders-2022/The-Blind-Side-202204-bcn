@@ -101,4 +101,4 @@
 
 - Acciones: read
 
-- Renderiza un listado de filtros
+- Renderiza un listado de filtros.
