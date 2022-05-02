@@ -1,5 +1,4 @@
 import { Route, Routes } from "react-router-dom";
-import CharacterDetailComponent from "./components/CharacterDetailComponent/CharacterDetailComponent";
 
 function App() {
   return (
