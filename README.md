@@ -3,7 +3,7 @@
 ## Datos:
 
 - Api local: Crea datos, Recoge datos, envia datos y modifica datos
-- Api publica: Nos envia los datos que queremos recibir
+- Api publica: Nos envia los datos que queremos recibir.
 
 ## Acciones (creación, modificación, lee, eliminar):
 
@@ -15,11 +15,11 @@
 
 ## Toast error message component
 
-- Renderiza un mensaje de error
+- Renderiza un mensaje de error.
 
 ## Spinner component
 
-- Acciones: Carga
+- Acciones: Carga.
 
 - Carga un estado y en funcion del estado RECIBIDO renderiza
 
