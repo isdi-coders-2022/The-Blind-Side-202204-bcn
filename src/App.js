@@ -1,14 +1,17 @@
 import { Route, Routes } from "react-router-dom";
-import CharactersListComponent from "./components/CharactersListComponent/CharactersListComponent";
+import Footer from "./components/FooterComponent/FooterComponent";
+import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
+import HomeComponent from "./pages/HomeComponent/HomeComponent";
 
 function App() {
   return (
     <div className="App">
+      <HeaderComponent />
       <h1>Welcome to React Router!</h1>
-      <CharactersListComponent />
       <Routes>
-        <Route path="/" element={""} />
+        <Route path="/" element={HomeComponent} />
       </Routes>
+      <Footer />
     </div>
   );
 }
