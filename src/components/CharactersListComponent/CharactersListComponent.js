@@ -1,6 +1,6 @@
 import CharacterComponent from "../CharacterComponent/CharacterComponent";
 
-const CharactersLiestComponent = () => {
+const CharactersListComponent = () => {
   const characterslist = [
     {
       id: 1,
@@ -59,4 +59,4 @@ const CharactersLiestComponent = () => {
   );
 };
 
-export default CharactersLiestComponent;
+export default CharactersListComponent;
