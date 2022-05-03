@@ -5,13 +5,13 @@ const CharacterComponent = ({
   character: { name, status, species, image },
 }) => {
   return (
-    <div className="Character">
+    <div className="character">
       <div className="icon-container icon-container--delete">
         <IoClose />
       </div>
       <div>
         <img
-          className="Character__image"
+          className="character__image"
           src={image}
           alt={`${name} from Rick and Morty Show`}
         ></img>
@@ -20,7 +20,7 @@ const CharacterComponent = ({
       <span>
         {species} | {status}
       </span>
-      <div className="Character__icons">
+      <div className="character__icons">
         <div className="icon-containerr icon-container--info">
           <FaInfo />
         </div>
