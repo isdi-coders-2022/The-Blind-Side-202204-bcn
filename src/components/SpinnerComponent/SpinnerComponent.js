@@ -1,4 +1,5 @@
 import { LeapFrog } from "@uiball/loaders";
+import "./SpinnerComponent.css";
 
 const SpinnerComponent = () => {
   <LeapFrog size={40} speed={2.5} color="black" />;
