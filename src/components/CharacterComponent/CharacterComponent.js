@@ -4,6 +4,13 @@ import { IoClose } from "react-icons/io5";
 const CharacterComponent = ({
   character: { name, status, species, image },
 }) => {
+  const characterList = async (endpoint) => {
+    const response = await fetch(endpoint);
+    const characterListData = await response.json();
+    return characterListData;
+  };
+  console.log(characterList("https://rickandmortyapi.com/api/character"));
+
   return (
     <div className="Character">
       <div className="icon-container icon-container--delete">
