@@ -12,7 +12,7 @@ const HeaderComponent = () => {
           </a>
         </li>
         <li>
-          <a href="Home">
+          <a href="/">
             <BsFillHeartFill />
           </a>
         </li>
