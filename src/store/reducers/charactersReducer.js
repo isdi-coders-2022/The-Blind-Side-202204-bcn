@@ -10,17 +10,6 @@ const charactersReducer = (currentState, action) => {
     case characterLoad:
       newValue = { ...action.payload };
       return newValue;
-
-    case characterAdd:
-      currentState.results.push(action.character);
-      newValue = { ...currentState };
-
-      return newValue;
-
-    case characterModify:
-      newValue = { ...currentState };
-
-      return newValue;
     default:
       newValue = { ...currentState };
       return newValue;

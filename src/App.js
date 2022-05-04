@@ -7,15 +7,12 @@ import CharactersProvider from "./store/contexts/CharacterProvider";
 function App() {
   return (
     <div className="App">
-      <CharactersProvider>
-        <HeaderComponent />
-        <h1>Welcome to React Router!</h1>
-        <Routes>
-          <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/home" element={<HomeComponent />} />
-        </Routes>
-        <Footer />
-      </CharactersProvider>
+      <HeaderComponent />
+      <Routes>
+        <Route path="/" element={<Navigate to="/home" />} />
+        <Route path="/home" element={<HomeComponent />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }
