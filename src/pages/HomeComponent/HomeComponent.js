@@ -1,9 +1,7 @@
-import CharactersListComponent from "../../components/CharactersListComponent/CharactersListComponent"
+import CharactersListComponent from "../../components/CharactersListComponent/CharactersListComponent";
 
-const HomeComponent = () => (
-  return (
-   <CharactersListComponent>
-  )
-)
+const HomeComponent = () => {
+  return <CharactersListComponent />;
+};
 
 export default HomeComponent;
