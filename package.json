@@ -47,8 +47,7 @@
   "jest": {
     "collectCoverageFrom": [
       "!src/index.js",
-      "!src/reportWebVitals.js",
-      "!src/SpinnerComponent.js"
+      "!src/reportWebVitals.js"
     ]
   }
 }
