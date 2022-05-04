@@ -1,7 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom";
 import Footer from "./components/FooterComponent/FooterComponent";
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
-import SpinnerComponent from "./components/SpinnerComponent/SpinnerComponent";
 import HomeComponent from "./pages/HomeComponent/HomeComponent";
 
 function App() {
@@ -13,7 +12,6 @@ function App() {
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomeComponent />} />
       </Routes>
-      <SpinnerComponent />
       <Footer />
     </div>
   );
