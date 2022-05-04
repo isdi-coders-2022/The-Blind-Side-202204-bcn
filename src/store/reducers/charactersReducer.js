@@ -8,8 +8,7 @@ const charactersReducer = (currentState, action) => {
   let newValue;
   switch (action.type) {
     case characterLoad:
-      newValue = { ...currentState };
-
+      newValue = { ...action.payload };
       return newValue;
 
     case characterAdd:
@@ -19,7 +18,7 @@ const charactersReducer = (currentState, action) => {
       return newValue;
 
     case characterModify:
-      newValue = [...currentState];
+      newValue = { ...currentState };
 
       return newValue;
     default:

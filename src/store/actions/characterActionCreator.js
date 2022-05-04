@@ -4,9 +4,9 @@ import {
   characterModify,
 } from "./characterActionType";
 
-export const charactersLoader = (payLoad) => ({
+export const charactersLoader = (payload) => ({
   type: characterLoad,
-  payLoad,
+  payload,
 });
 
 export const characterAdder = (character) => ({

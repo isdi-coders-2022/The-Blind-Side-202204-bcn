@@ -4,7 +4,13 @@ import CharacterContext from "./CharacterContext";
 
 const CharacterProvider = ({ children }) => {
   const initialValue = {
-    characterslist: [],
+    info: {
+      count: 0,
+      pages: 0,
+      next: null,
+      prev: null,
+    },
+    results: [],
   };
 
   const [state, dispatch] = useReducer(charactersReducer, initialValue);
