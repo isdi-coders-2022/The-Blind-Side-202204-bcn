@@ -1,4 +1,8 @@
-import { characterLoad } from "../actions/characterActionType";
+import {
+  characterAdd,
+  characterLoad,
+  characterModify,
+} from "../actions/characterActionType";
 
 const charactersReducer = (currentState, action) => {
   let newValue;
@@ -6,7 +10,6 @@ const charactersReducer = (currentState, action) => {
     case characterLoad:
       newValue = { ...action.payload };
       return newValue;
-
     default:
       newValue = { ...currentState };
       return newValue;
