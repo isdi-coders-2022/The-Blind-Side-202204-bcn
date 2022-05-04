@@ -2,7 +2,7 @@ import {
   characterAdd,
   characterLoad,
   characterModify,
-} from "./actions/characterActionCreator";
+} from "./characterActionType";
 
 const charactersReducer = (currentState, action) => {
   let newValue;
