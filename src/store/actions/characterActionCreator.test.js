@@ -1,5 +1,13 @@
-import { characterAdder, charactersLoader } from "./characterActionCreator";
-import { characterAdd, characterLoad } from "./characterActionType";
+import {
+  characterAdder,
+  characterModifier,
+  charactersLoader,
+} from "./characterActionCreator";
+import {
+  characterAdd,
+  characterLoad,
+  characterModify,
+} from "./characterActionType";
 
 describe("Given characterActionCreator function", () => {
   describe("When the action chracterLoader receives 13", () => {
@@ -31,6 +39,28 @@ describe("Given characterActionCreator function", () => {
       };
 
       const result = characterAdder(newCharacter);
+
+      expect(result).toEqual(expectObject);
+    });
+  });
+  describe("When the action characterModify receives a new character", () => {
+    test("Then it should return a object with the new character to modify", () => {
+      const newCharacter = {
+        id: 6,
+        name: "Jerry Smith",
+        status: "Alive",
+      };
+
+      const expectObject = {
+        type: characterModify,
+        character: {
+          id: 6,
+          name: "Jerry Smith",
+          status: "Alive",
+        },
+      };
+
+      const result = characterModifier(newCharacter);
 
       expect(result).toEqual(expectObject);
     });
