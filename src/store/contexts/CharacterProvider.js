@@ -1,12 +1,16 @@
 import { useReducer } from "react";
 import charactersReducer from "../reducers/charactersReducer";
-import CharacterContext from "./CharactersContext";
+import CharacterContext from "./CharacterContext";
 
-const CharactersProvider = ({ children }) => {
+const CharacterProvider = ({ children }) => {
   const initialValue = {
-    characterslist: [],
-    loading: true,
-    buttonText: "Touch Me",
+    info: {
+      count: 0,
+      pages: 0,
+      next: null,
+      prev: null,
+    },
+    results: [],
   };
 
   const [state, dispatch] = useReducer(charactersReducer, initialValue);
@@ -18,4 +22,4 @@ const CharactersProvider = ({ children }) => {
   );
 };
 
-export default CharactersProvider;
+export default CharacterProvider;

@@ -1,15 +1,19 @@
 import { render, screen } from "@testing-library/react";
+import CharacterProvider from "../../store/contexts/CharacterProvider";
 import HomeComponent from "./HomeComponent";
 
 describe("Given a HomeComponent", () => {
   describe("When it is instantiated", () => {
-    test("Then it should render the logo from the Header Compoment", () => {
-      const logoAlt = "rick and morty logo";
+    test("Then it should render at least one li", () => {
+      render(
+        <CharacterProvider>
+          <HomeComponent />
+        </CharacterProvider>
+      );
 
-      render(<HomeComponent />);
-      const logo = screen.getByAltText(logoAlt);
+      const totalList = screen.getByRole("list");
 
-      expect(logo).toBeInTheDocument();
+      expect(totalList).toBeInTheDocument();
     });
   });
 });

@@ -1,11 +1,9 @@
 import CharactersListComponent from "../../components/CharactersListComponent/CharactersListComponent";
 
 const HomeComponent = () => {
-  return (
-    <>
-      <CharactersListComponent />
-    </>
-  );
+
+  return <CharactersListComponent />;
+
 };
 
 export default HomeComponent;
