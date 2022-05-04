@@ -1,4 +1,4 @@
 import React from "react";
 
-const CharactersContext = React.createContext();
-export default CharactersContext;
+const CharacterContext = React.createContext();
+export default CharacterContext;
