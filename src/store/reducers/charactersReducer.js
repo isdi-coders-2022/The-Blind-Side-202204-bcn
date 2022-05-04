@@ -2,10 +2,10 @@ import {
   characterAdd,
   characterLoad,
   characterModify,
-} from "./characterActionCreator";
+} from "../actions/characterActionType";
+
 const charactersReducer = (currentState, action) => {
   let newValue;
-
   switch (action.type) {
     case characterLoad:
       newValue = { ...currentState };
