@@ -1,9 +1,7 @@
+import CharactersListComponent from "../../components/CharactersListComponent/CharactersListComponent";
+
 const HomeComponent = () => {
-  return (
-    <>
-      <img src="" alt="rick and morty logo" />
-    </>
-  );
+  return <CharactersListComponent />;
 };
 
 export default HomeComponent;
