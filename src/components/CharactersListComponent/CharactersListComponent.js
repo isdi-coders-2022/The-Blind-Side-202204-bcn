@@ -10,7 +10,7 @@ const CharactersListComponent = () => {
 
   useEffect(() => {
     loadCharacters();
-  }, []);
+  }, [loadCharacters]);
 
   return (
     <CharacterList>
