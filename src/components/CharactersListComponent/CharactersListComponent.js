@@ -2,7 +2,7 @@ import CharacterContext from "../../store/contexts/CharacterContext";
 import CharacterComponent from "../CharacterComponent/CharacterComponent";
 import { useContext, useEffect } from "react";
 import { charactersLoader } from "../../store/actions/characterActionCreator";
-import { CharacterList } from "./CharactersStyleComponent";
+import { CharacterList } from "./CharactersListStyleComponent";
 
 const CharactersListComponent = () => {
   const { state, dispatch } = useContext(CharacterContext);
