@@ -14,7 +14,7 @@ describe("Given characterActionCreator function", () => {
     test("Then it should return an object with a property type and payLoad 13", () => {
       const character = 13;
 
-      const expectObject = { type: characterLoad, payLoad: 13 };
+      const expectObject = { type: characterLoad, payload: 13 };
 
       const result = charactersLoader(character);
 
