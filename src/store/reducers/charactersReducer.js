@@ -8,12 +8,13 @@ const charactersReducer = (currentState, action) => {
 
   switch (action.type) {
     case characterLoad:
-      newValue = [...currentState];
+      newValue = { ...currentState };
 
       break;
 
     case characterAdd:
-      newValue = [...currentState, action.character];
+      currentState.results.push(action.character);
+      newValue = { ...currentState };
 
       break;
 
@@ -22,7 +23,7 @@ const charactersReducer = (currentState, action) => {
 
       break;
     default:
-      newValue = [...currentState];
+      newValue = { ...currentState };
   }
 };
 
