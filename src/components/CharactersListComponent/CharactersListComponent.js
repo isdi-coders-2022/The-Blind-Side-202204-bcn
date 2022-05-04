@@ -1,19 +1,16 @@
 import CharacterContext from "../../store/contexts/CharacterContext";
 import CharacterComponent from "../CharacterComponent/CharacterComponent";
 import { useContext, useEffect } from "react";
-import { charactersLoader } from "../../store/actions/characterActionCreator";
-import { CharacterList } from "./CharactersListStyleComponent";
+import { CharacterList } from "./CharactersStyleComponent";
+import useApi from "../../store/hooks/useApi";
 
 const CharactersListComponent = () => {
-  const { state, dispatch } = useContext(CharacterContext);
+  const { state } = useContext(CharacterContext);
+  const { loadCharacters } = useApi();
 
   useEffect(() => {
-    (async () => {
-      const response = await fetch("https://rickandmortyapi.com/api/character");
-      const characterListData = await response.json();
-      dispatch(charactersLoader(characterListData));
-    })();
-  }, [dispatch]);
+    loadCharacters();
+  }, []);
 
   return (
     <CharacterList>

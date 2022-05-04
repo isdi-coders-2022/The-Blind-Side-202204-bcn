@@ -1,5 +1,8 @@
+import { useContext } from "react";
 import { BsCaretLeftFill, BsCaretRightFill } from "react-icons/bs";
 import styled from "styled-components";
+import CharacterContext from "../../store/contexts/CharacterContext";
+import useApi from "../../store/hooks/useApi";
 
 const PagerComponentStyle = styled.div`
   .pager {
@@ -23,14 +26,30 @@ const PagerComponentStyle = styled.div`
 `;
 
 const PagerComponent = () => {
+  const { state } = useContext(CharacterContext);
+  const { loadCharacters } = useApi();
+  // const params = new URLSearchParams(new URL(pokemonsUrl).search);
+  // const offset = params.get("offset");
+  // const limit = params.get("limit");
+
   return (
     <PagerComponentStyle>
       <div className="pager">
-        <div className="icon-container">
+        <div
+          className="icon-container"
+          onClick={() => {
+            loadCharacters(state.info.prev);
+          }}
+        >
           <BsCaretLeftFill />
         </div>
         <span>21-30</span>
-        <div className="icon-container">
+        <div
+          className="icon-container"
+          onClick={() => {
+            loadCharacters(state.info.next);
+          }}
+        >
           <BsCaretRightFill />
         </div>
       </div>
