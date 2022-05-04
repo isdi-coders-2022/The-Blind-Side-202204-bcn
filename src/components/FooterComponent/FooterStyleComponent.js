@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Span = styled.span`
+export const StyleTeamName = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;

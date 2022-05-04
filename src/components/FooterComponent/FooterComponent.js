@@ -1,10 +1,12 @@
-import { Span } from "./FooterStyleComponent";
+import { StyleTeamName } from "./FooterStyleComponent";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <Span className="footer__text">THE BLIND SIDE PROJECT</Span>
-    </div>
+    <StyleTeamName>
+      <div className="footer">
+        <span className="footer__text">THE BLIND SIDE PROJECT</span>
+      </div>
+    </StyleTeamName>
   );
 };
 
