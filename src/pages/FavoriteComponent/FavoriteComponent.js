@@ -8,11 +8,11 @@ const FavoriteComponent = () => {
   const { loadCharacters } = useApi();
 
   useEffect(() => {
-    loadCharacters();
+    loadCharacters("https://characters-api.onrender.com/characters");
   }, [loadCharacters]);
   return (
     <>
-      <CharactersListComponent />
+      <CharactersListComponent state={state} />
     </>
   );
 };
