@@ -1,5 +1,9 @@
 import { useCallback, useContext } from "react";
-import { charactersLoader } from "../actions/characterActionCreator";
+import {
+  charactersLoader,
+  loadLocalApi,
+} from "../actions/characterActionCreator";
+import { characterLoadLocal } from "../actions/characterActionType";
 import CharacterContext from "../contexts/CharacterContext";
 
 const useApi = () => {
@@ -20,7 +24,31 @@ const useApi = () => {
     [dispatch]
   );
 
-  return { loadCharacters };
+  const loadLocalApiCharacter = useCallback(() => {
+    (async () => {
+      const response = await fetch(
+        "https://characters-api.onrender.com/characters/"
+      );
+      const characterListData = await response.json();
+      dispatch(loadLocalApi(characterListData));
+    })();
+  }, [dispatch]);
+
+  const deleteCharacter = (id) => {
+    (async () => {
+      const localApiResponse = await fetch(
+        `https://characters-api.onrender.com/characters/${id}`,
+        {
+          method: "DELETE",
+        }
+      );
+      alert("Holaaa");
+      await localApiResponse.json();
+      loadLocalApiCharacter();
+    })();
+  };
+
+  return { loadCharacters, deleteCharacter, loadLocalApiCharacter };
 };
 
 export default useApi;

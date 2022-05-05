@@ -1,11 +1,15 @@
 import { FaHeart, FaInfo } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import { characterDeleter } from "../../store/actions/characterActionCreator";
+import useApi from "../../store/hooks/useApi";
 import { CharacterCard } from "./CharacterComponentStyle";
 
 const CharacterComponent = ({
   character: { id, name, status, species, image },
 }) => {
+  const { deleteCharacter } = useApi();
+
   return (
     <CharacterCard>
       <div className="character">
@@ -21,7 +25,12 @@ const CharacterComponent = ({
           {species} | {status}
         </span>
         <div className="character__icons">
-          <div className="icon-container icon-container--delete">
+          <div
+            className="icon-container icon-container--delete"
+            onClick={() => {
+              deleteCharacter(id);
+            }}
+          >
             <IoClose />
           </div>
           <Link

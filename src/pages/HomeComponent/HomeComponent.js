@@ -14,7 +14,7 @@ const HomeComponent = () => {
 
   return (
     <>
-      <CharactersListComponent state={state} />
+      <CharactersListComponent characters={state.results} />
       <PagerComponent />
     </>
   );
