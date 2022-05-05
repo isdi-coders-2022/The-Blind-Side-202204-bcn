@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import CharacterProvider from "../../store/contexts/CharacterProvider";
 import PagerComponent from "./PagerComponent";
 
 describe("Given a pagerComponent", () => {
@@ -6,7 +7,11 @@ describe("Given a pagerComponent", () => {
     test("Then it should print a span element", () => {
       const text = "21-30";
 
-      render(<PagerComponent />);
+      render(
+        <CharacterProvider>
+          <PagerComponent />
+        </CharacterProvider>
+      );
 
       const textPager = screen.getByText(text);
 
