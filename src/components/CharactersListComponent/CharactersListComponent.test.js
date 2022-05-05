@@ -1,11 +1,11 @@
-import { cleanup, render, screen } from "@testing-library/react";
-import CharacterProvider from "../../store/contexts/CharacterProvider";
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+
 import CharactersListComponent from "./CharactersListComponent";
 
 describe("Given a component CharacterListComponent", () => {
   describe("When its called while including a character named 'Jerry Smith'", () => {
-    test.afterEach(cleanup);
-    test("Then it should render an img that has an alt text 'Jerry Smith' from Rick and Morty Show'", () => {
+    test("Then it should render an img that has an alt text 'Jerry Smith from Rick and Morty Show'", () => {
       const initialValue = {
         info: {
           count: 0,
@@ -24,14 +24,16 @@ describe("Given a component CharacterListComponent", () => {
       };
 
       render(
-        <CharacterProvider>
+        <BrowserRouter>
           <CharactersListComponent state={initialValue} />
-        </CharacterProvider>
+        </BrowserRouter>
       );
 
-      const totalList = screen.getAllByAltText("Jerry Smith");
+      const altImageText = screen.getByAltText(
+        "Jerry Smith from Rick and Morty Show"
+      );
 
-      expect(totalList).toBeInTheDocument();
+      expect(altImageText).toBeInTheDocument();
     });
   });
 });
