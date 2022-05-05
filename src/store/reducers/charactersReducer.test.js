@@ -33,29 +33,46 @@ describe("Given the chractersReducer function", () => {
 
   describe("When it receives two characters and action type characterLoad", () => {
     test("Then it should return an object including the given characters", () => {
-      const currentCharacters = [
-        {
-          id: 1,
-          name: "Rick Sanchez",
-          status: "Alive",
-          species: "Human",
+      const currentCharacters = {
+        info: {
+          count: 826,
+          pages: 42,
+          next: "https://rickandmortyapi.com/api/character/?page=2",
+          prev: null,
         },
-        { id: 2, name: "Morty Smith", status: "Alive", species: "Human" },
-      ];
+        results: {
+          0: {
+            id: 1,
+            name: "Rick Sanchez",
+            status: "Alive",
+            species: "Human",
+          },
+          1: { id: 2, name: "Morty Smith", status: "Alive", species: "Human" },
+        },
+      };
 
       const actionType = {
         type: characterLoad,
+        payload: currentCharacters,
       };
 
-      const expectedObjectResult = [
-        {
-          id: 1,
-          name: "Rick Sanchez",
-          status: "Alive",
-          species: "Human",
+      const expectedObjectResult = {
+        info: {
+          count: 826,
+          pages: 42,
+          next: "https://rickandmortyapi.com/api/character/?page=2",
+          prev: null,
         },
-        { id: 2, name: "Morty Smith", status: "Alive", species: "Human" },
-      ];
+        results: {
+          0: {
+            id: 1,
+            name: "Rick Sanchez",
+            status: "Alive",
+            species: "Human",
+          },
+          1: { id: 2, name: "Morty Smith", status: "Alive", species: "Human" },
+        },
+      };
 
       const newCharactersLoaded = charactersReducer(
         currentCharacters,
