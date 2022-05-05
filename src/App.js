@@ -12,9 +12,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomeComponent />} />
-
+        <Route path="/*" element={<ErrorMessageComponent />} />
         <Route path="/detail" element={<DetailComponent />} />
-
       </Routes>
       <Footer />
     </div>
