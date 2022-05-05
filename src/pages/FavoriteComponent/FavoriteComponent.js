@@ -5,14 +5,15 @@ import CharacterContext from "../../store/contexts/CharacterContext";
 
 const FavoriteComponent = () => {
   const { state } = useContext(CharacterContext);
-  const { loadCharacters } = useApi();
+  const { loadLocalApiCharacter } = useApi();
 
   useEffect(() => {
-    loadCharacters("https://characters-api.onrender.com/characters");
-  }, [loadCharacters]);
+    loadLocalApiCharacter();
+  }, [loadLocalApiCharacter]);
+
   return (
     <>
-      <CharactersListComponent state={state} />
+      <CharactersListComponent characters={state.localApiResults} />
     </>
   );
 };

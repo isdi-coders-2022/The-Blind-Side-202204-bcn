@@ -1,6 +1,8 @@
 import {
   characterAdd,
+  characterDelete,
   characterLoad,
+  characterLoadLocal,
   characterModify,
 } from "./characterActionType";
 
@@ -17,4 +19,14 @@ export const characterAdder = (character) => ({
 export const characterModifier = (character) => ({
   type: characterModify,
   character: character,
+});
+
+export const characterDeleter = (character) => ({
+  type: characterDelete,
+  character: character,
+});
+
+export const loadLocalApi = (characters) => ({
+  type: characterLoadLocal,
+  characters: characters,
 });

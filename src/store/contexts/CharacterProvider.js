@@ -11,6 +11,7 @@ const CharacterProvider = ({ children }) => {
       prev: null,
     },
     results: [],
+    localApiResults: [],
   };
 
   const [state, dispatch] = useReducer(charactersReducer, initialValue);
