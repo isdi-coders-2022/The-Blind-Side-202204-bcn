@@ -1,13 +1,11 @@
 import { FaHeart, FaInfo } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterComponentStyle";
 
 const CharacterComponent = ({
   character: { name, status, species, image },
 }) => {
-  const navigate = useNavigate();
-
   return (
     <CharacterCard>
       <div className="character">
