@@ -16,7 +16,7 @@ const HeaderComponent = () => {
         <nav className="header__nav">
           <ul className="header__icon">
             <li>
-              <a href="Fav">
+              <a href="/home">
                 <RiHome2Fill />
               </a>
             </li>
