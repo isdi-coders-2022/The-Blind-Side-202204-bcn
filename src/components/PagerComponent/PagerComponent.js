@@ -28,9 +28,6 @@ const PagerComponentStyle = styled.div`
 const PagerComponent = () => {
   const { state } = useContext(CharacterContext);
   const { loadCharacters } = useApi();
-  // const params = new URLSearchParams(new URL(pokemonsUrl).search);
-  // const offset = params.get("offset");
-  // const limit = params.get("limit");
 
   return (
     <PagerComponentStyle>
