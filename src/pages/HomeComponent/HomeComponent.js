@@ -4,7 +4,7 @@ import PagerComponent from "../../components/PagerComponent/PagerComponent";
 const HomeComponent = () => {
   return (
     <>
-      <CharactersListComponent />;
+      <CharactersListComponent />
       <PagerComponent />
     </>
   );

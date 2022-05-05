@@ -14,6 +14,8 @@ export const CharacterCard = styled.div`
       text-transform: uppercase;
       font-size: 1.8rem;
       padding-top: 20px;
+      text-align: center;
+
       color: #b2df28;
     }
     span {
