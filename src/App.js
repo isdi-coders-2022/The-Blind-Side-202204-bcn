@@ -3,6 +3,7 @@ import ErrorMessageComponent from "./components/ErrorMessageComponent/ErrorMessa
 import Footer from "./components/FooterComponent/FooterComponent";
 import HeaderComponent from "./components/HeaderComponent/HeaderComponent";
 import DetailComponent from "./pages/DetailComponent/DetailComponent";
+import FavoriteComponent from "./pages/FavoriteComponent/FavoriteComponent";
 import HomeComponent from "./pages/HomeComponent/HomeComponent";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Route path="/home" element={<HomeComponent />} />
         <Route path="/*" element={<ErrorMessageComponent />} />
         <Route path="/detail" element={<DetailComponent />} />
+        <Route path="/favorites" element={<FavoriteComponent />} />
       </Routes>
       <Footer />
     </div>
