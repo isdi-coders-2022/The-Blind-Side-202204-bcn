@@ -10,7 +10,7 @@ describe("Given a component DetailComponent", () => {
           <DetailComponent />
         </CharacterProvider>
       );
-      const expectedNumOfLi = 5;
+      const expectedNumOfLi = 3;
 
       const totalList = screen.getAllByRole("listitem");
 

@@ -1,19 +1,19 @@
 import { MdRefresh } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 
-const CharacterDetailComponent = () => {
+const CharacterDetailComponent = ({
+  character: { name, status, species, gender, image },
+}) => {
   return (
     <>
       <div>
-        <img src="" alt="" />
+        <img src={image} alt={name} />
         <div>
-          <h2>Character Name</h2>
+          <h2>{name}</h2>
           <ul>
-            <li>Species: Human</li>
-            <li>Status: Alive</li>
-            <li>Gender: Male</li>
-            <li>Origin: Earth</li>
-            <li>Total Episodes: 3</li>
+            <li>Species: {species}</li>
+            <li>Status: {status}</li>
+            <li>Gender: {gender}</li>
           </ul>
           <div>
             <MdRefresh />
