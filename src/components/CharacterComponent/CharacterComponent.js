@@ -1,6 +1,6 @@
 import { FaHeart, FaInfo } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { CharacterCard } from "./CharacterComponentStyle";
 
 const CharacterComponent = ({
@@ -26,15 +26,9 @@ const CharacterComponent = ({
           <div className="icon-container icon-container--delete">
             <IoClose />
           </div>
-          <div
-            className="icon-container icon-container--info"
-            onClick={(event) => {
-              event.preventDefault();
-              navigate("/detail");
-            }}
-          >
+          <Link to="/detail" className="icon-container icon-container--info">
             <FaInfo />
-          </div>
+          </Link>
           <div className="icon-container icon-container--favourite">
             <FaHeart />
           </div>
