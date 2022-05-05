@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Navigate to="/home" />} />
         <Route path="/home" element={<HomeComponent />} />
-        <Route path="*" elementt={<ErrorMessageComponent />} />
+        <Route path="/*" element={<ErrorMessageComponent />} />
       </Routes>
       <Footer />
     </div>
