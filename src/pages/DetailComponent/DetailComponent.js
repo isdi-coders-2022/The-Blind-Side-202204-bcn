@@ -1,7 +1,7 @@
 import CharacterDetailComponent from "../../components/CharacterDetailComponent/CharacterDetailComponent";
 
 const DetailComponent = () => {
-  <CharacterDetailComponent />;
+  return <CharacterDetailComponent />;
 };
 
 export default DetailComponent;
