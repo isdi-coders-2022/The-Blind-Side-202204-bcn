@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
 import CharacterComponent from "./CharacterComponent";
 
 describe("Given a CharacterComponent", () => {
@@ -13,7 +14,11 @@ describe("Given a CharacterComponent", () => {
         image: "",
       };
 
-      render(<CharacterComponent character={testCharacter} />);
+      render(
+        <BrowserRouter>
+          <CharacterComponent character={testCharacter} />
+        </BrowserRouter>
+      );
       const createdImageAltText = screen.getByAltText(expectedAltText);
 
       expect(createdImageAltText).toBeInTheDocument();
