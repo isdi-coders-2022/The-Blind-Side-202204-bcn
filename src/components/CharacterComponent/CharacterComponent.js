@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { CharacterCard } from "./CharacterComponentStyle";
 
 const CharacterComponent = ({
-  character: { name, status, species, image },
+  character: { id, name, status, species, image },
 }) => {
   return (
     <CharacterCard>
@@ -24,7 +24,10 @@ const CharacterComponent = ({
           <div className="icon-container icon-container--delete">
             <IoClose />
           </div>
-          <Link to="/detail" className="icon-container icon-container--info">
+          <Link
+            to={`/detail/${id}`}
+            className="icon-container icon-container--info"
+          >
             <FaInfo />
           </Link>
           <div className="icon-container icon-container--favourite">
