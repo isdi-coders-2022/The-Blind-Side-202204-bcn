@@ -1,6 +1,7 @@
 import { RiHome2Fill } from "react-icons/ri";
 import { BsFillHeartFill } from "react-icons/bs";
 import { StyleHeader } from "./StyleHeaderComponent";
+import { NavLink } from "react-router-dom";
 
 const HeaderComponent = () => {
   return (
@@ -16,14 +17,14 @@ const HeaderComponent = () => {
         <nav className="header__nav">
           <ul className="header__icon">
             <li>
-              <a href="/home">
+              <NavLink to="/home">
                 <RiHome2Fill />
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href="/">
+              <NavLink to="/favorites">
                 <BsFillHeartFill />
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>
