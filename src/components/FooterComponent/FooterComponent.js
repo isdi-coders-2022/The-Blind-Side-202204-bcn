@@ -1,6 +1,6 @@
 import { StyleTeamName } from "./FooterStyleComponent";
 
-const Footer = () => {
+const FooterComponent = () => {
   return (
     <StyleTeamName>
       <div className="footer">
@@ -10,4 +10,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default FooterComponent;
