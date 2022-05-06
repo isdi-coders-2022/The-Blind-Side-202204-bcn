@@ -3,6 +3,7 @@ import { BsCaretLeftFill, BsCaretRightFill } from "react-icons/bs";
 import styled from "styled-components";
 import CharacterContext from "../../store/contexts/CharacterContext";
 import useApi from "../../store/hooks/useApi";
+import Button from "../Button/Button";
 
 const PagerComponentStyle = styled.div`
   .pager {
@@ -13,6 +14,14 @@ const PagerComponentStyle = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+
+    .icon-container {
+      background: none;
+      border: none;
+      :active {
+        color: #fff;
+      }
+    }
 
     svg {
       width: 70px;
@@ -32,23 +41,22 @@ const PagerComponent = () => {
   return (
     <PagerComponentStyle>
       <div className="pager">
-        <div
-          className="icon-container"
-          onClick={() => {
+        <Button
+          nameClass={"icon-container"}
+          text={<BsCaretLeftFill />}
+          action={() => {
             loadCharacters(state.info.prev);
           }}
-        >
-          <BsCaretLeftFill />
-        </div>
+        />
         <span>21-30</span>
-        <div
-          className="icon-container"
-          onClick={() => {
+
+        <Button
+          nameClass={"icon-container"}
+          text={<BsCaretRightFill />}
+          action={() => {
             loadCharacters(state.info.next);
           }}
-        >
-          <BsCaretRightFill />
-        </div>
+        />
       </div>
     </PagerComponentStyle>
   );

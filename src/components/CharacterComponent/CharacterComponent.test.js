@@ -52,4 +52,28 @@ describe("Given a CharacterComponent", () => {
       expect(totalButtons.length).toEqual(expectedNumberofButtons);
     });
   });
+  describe("When it's call with a character name of Jerry", () => {
+    test("Then it should render an img that has an alt text 'Jerry Smith from Rick and Morty Show'", () => {
+      const expectedHeading = "Jerry from Rick and Morty Show";
+      const testCharacter = {
+        id: 1,
+        name: "Jerry",
+        status: "Alive",
+        species: "Human",
+        image: "",
+      };
+
+      render(
+        <BrowserRouter>
+          <CharacterProvider>
+            <CharacterComponent character={testCharacter} />
+          </CharacterProvider>
+        </BrowserRouter>
+      );
+
+      const createdHeading = screen.getByAltText(expectedHeading);
+
+      expect(createdHeading).toBeInTheDocument();
+    });
+  });
 });
