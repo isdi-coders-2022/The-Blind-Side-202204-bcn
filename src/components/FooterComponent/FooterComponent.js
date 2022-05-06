@@ -1,14 +1,16 @@
-import styledComponents from "styled-components";
+import styled from "styled-components";
 
-const StyleTeamName = styledComponents.span`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  color: red;
-  height: 200px;
+const StyleTeamName = styled.div`
+  .footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: red;
+    height: 200px;
+  }
 `;
-
 const FooterComponent = () => {
   return (
     <StyleTeamName>

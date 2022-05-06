@@ -18,4 +18,19 @@ describe("Given a pagerComponent", () => {
       expect(textPager).toBeInTheDocument();
     });
   });
+  describe("When it is call", () => {
+    test("Then it should render two buttons", () => {
+      const expectedNumberofButtons = 2;
+
+      render(
+        <CharacterProvider>
+          <PagerComponent />
+        </CharacterProvider>
+      );
+
+      const numberofButtons = screen.getAllByRole("button");
+
+      expect(numberofButtons.length).toBe(expectedNumberofButtons);
+    });
+  });
 });

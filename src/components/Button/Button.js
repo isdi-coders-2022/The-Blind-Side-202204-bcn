@@ -1,5 +1,9 @@
-const Button = ({ text, className }) => {
-  return <button className={className}>{text}</button>;
+const Button = ({ text, nameClass, action }) => {
+  return (
+    <button onClick={action} className={nameClass}>
+      {text}
+    </button>
+  );
 };
 
 export default Button;

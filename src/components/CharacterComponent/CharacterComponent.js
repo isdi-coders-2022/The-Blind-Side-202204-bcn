@@ -2,6 +2,7 @@ import { FaHeart, FaInfo } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import useApi from "../../store/hooks/useApi";
+import Button from "../Button/Button";
 import { CharacterCard } from "./CharacterComponentStyle";
 
 const CharacterComponent = ({ character }) => {
@@ -23,29 +24,30 @@ const CharacterComponent = ({ character }) => {
           {species} | {status}
         </span>
         <div className="character__icons">
-          <div
-            className="icon-container icon-container--delete"
-            onClick={() => {
+          <Button
+            text={<IoClose />}
+            nameClass={"icon-container icon-container--delete"}
+            action={(event) => {
+              event.preventDefault();
               deleteCharacter(id);
             }}
-          >
-            <IoClose />
-          </div>
-          <Link
-            to={`/detail/${id}`}
-            className="icon-container icon-container--info"
-          >
-            <FaInfo />
+          />
+
+          <Link to={`/detail/${id}`}>
+            <Button
+              text={<FaInfo />}
+              nameClass={"icon-container icon-container--info"}
+            />
           </Link>
-          <div
-            className="icon-container icon-container--favourite"
-            onClick={(event) => {
+
+          <Button
+            text={<FaHeart />}
+            nameClass={"icon-container icon-container--favourite"}
+            action={(event) => {
               event.preventDefault();
               addCharacter(character);
             }}
-          >
-            <FaHeart />
-          </div>
+          />
         </div>
       </div>
     </CharacterCard>
