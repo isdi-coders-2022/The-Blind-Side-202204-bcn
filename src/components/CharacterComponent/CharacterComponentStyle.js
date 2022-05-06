@@ -40,6 +40,12 @@ export const CharacterCard = styled.div`
       width: 300px;
       justify-content: space-between;
       padding-bottom: 30px;
+      button {
+        border: none;
+        :active {
+          filter: brightness(85%);
+        }
+      }
 
       .icon-container {
         display: flex;
