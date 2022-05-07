@@ -27,8 +27,7 @@ const CharacterComponent = ({ character }) => {
           <Button
             text={<IoClose />}
             nameClass={"icon-container icon-container--delete"}
-            action={(event) => {
-              event.preventDefault();
+            action={() => {
               deleteCharacter(id);
             }}
           />
