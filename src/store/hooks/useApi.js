@@ -31,13 +31,9 @@ const useApi = () => {
 
   const deleteCharacter = (id) => {
     (async () => {
-      const localApiResponse = await fetch(
-        `https://characters-api.onrender.com/characters/${id}`,
-        {
-          method: "DELETE",
-        }
-      );
-      await localApiResponse.json();
+      await fetch(`https://characters-api.onrender.com/characters/${id}`, {
+        method: "DELETE",
+      });
       loadLocalApiCharacter();
     })();
   };
