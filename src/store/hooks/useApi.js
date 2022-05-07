@@ -39,11 +39,13 @@ const useApi = () => {
   };
 
   const addCharacter = (character) => {
-    fetch(`https://characters-api.onrender.com/characters/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(character),
-    });
+    (async () => {
+      await fetch(`https://characters-api.onrender.com/characters/`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(character),
+      });
+    })();
   };
 
   return {
