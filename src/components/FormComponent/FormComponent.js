@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 import useApi from "../../store/hooks/useApi";
 
 const FormComponent = ({ favouritedCharacters }) => {
-  const { addCharacter, loadLocalApiCharacter } = useApi();
+  const { addCharacter } = useApi();
 
   const formSubmit = (event) => {
     event.preventDefault();
@@ -19,8 +19,6 @@ const FormComponent = ({ favouritedCharacters }) => {
     setnewCharacterStatus("");
     setnewCharacterSpecies("");
     setnewCharacterGender("");
-
-    loadLocalApiCharacter();
   };
 
   const [newCharacterName, setnewCharacterName] = useState("");

@@ -53,6 +53,7 @@ const useApi = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(character),
       });
+      loadLocalApiCharacter();
     })();
   };
 
