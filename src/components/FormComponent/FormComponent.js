@@ -7,12 +7,17 @@ const FormComponent = ({ favouritedCharacters }) => {
 
   const formSubmit = (event) => {
     event.preventDefault();
+    for (const property in newCharacter) {
+      newCharacter[property] = newCharacter[property].trim();
+    }
+
     if (
-      Object.values(newCharacter).findIndex(
-        (value) => value.replace(/\s/g, "") === ""
-      ) !== -1
+      typeof Object.values(newCharacter).find((value) => value === "") !==
+      "undefined"
     )
       return;
+
+    newCharacter.id = `createdcharacter${newCharacter.name[0]}${newCharacter.species[0]}${favouritedCharacters.length}`;
 
     addCharacter(newCharacter);
     setnewCharacterName("");
@@ -27,7 +32,7 @@ const FormComponent = ({ favouritedCharacters }) => {
   const [newCharacterGender, setnewCharacterGender] = useState("");
 
   const newCharacter = {
-    id: `created${favouritedCharacters.length}`,
+    id: "createdcharacter",
     name: newCharacterName,
     status: newCharacterStatus,
     species: newCharacterSpecies,
