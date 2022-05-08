@@ -1,5 +1,4 @@
 import {
-  characterDelete,
   characterLoad,
   characterLoadLocal,
 } from "../actions/characterActionType";
@@ -9,10 +8,6 @@ const charactersReducer = (currentState, action) => {
   switch (action.type) {
     case characterLoad:
       newValue = { ...currentState, ...action.payload };
-      return newValue;
-
-    case characterDelete:
-      newValue = { ...currentState, ...action.character };
       return newValue;
 
     case characterLoadLocal:
