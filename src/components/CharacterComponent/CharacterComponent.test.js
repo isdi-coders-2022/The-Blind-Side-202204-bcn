@@ -1,4 +1,5 @@
 import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { click } from "@testing-library/user-event/dist/click";
 import { BrowserRouter } from "react-router-dom";
 import CharacterProvider from "../../store/contexts/CharacterProvider";
@@ -55,29 +56,59 @@ describe("Given a CharacterComponent", () => {
       expect(totalButtons.length).toEqual(expectedNumberofButtons);
     });
 
-    test("Then it should render a button with the title 'add-favourite'", () => {
-      const testCharacter = {
-        id: 1,
-        name: "Paco",
-        status: "Alive",
-        species: "Human",
-        image: "",
-      };
+    describe("When it's call", () => {
+      test("Then it should render a button with the title 'add-favourite'", () => {
+        const testCharacter = {
+          id: 1,
+          name: "Paco",
+          status: "Alive",
+          species: "Human",
+          image: "",
+        };
 
-      render(
-        <BrowserRouter>
-          <CharacterProvider>
-            <CharacterComponent character={testCharacter} />
-          </CharacterProvider>
-        </BrowserRouter>
-      );
+        render(
+          <BrowserRouter>
+            <CharacterProvider>
+              <CharacterComponent character={testCharacter} />
+            </CharacterProvider>
+          </BrowserRouter>
+        );
 
-      const expectedFavButton = screen.getByRole("button", {
-        name: /add-favourite/i,
+        const expectedFavButton = screen.getByRole("button", {
+          name: /add-favourite/i,
+        });
+
+        click(expectedFavButton);
+        expect(expectedFavButton).toBeInTheDocument();
       });
+    });
 
-      click(expectedFavButton);
-      expect(expectedFavButton).toBeInTheDocument();
+    describe("When it renders a 'delete-favourite' title button and the user press on it", () => {
+      test("Then it should call the onclick function passed to the button", () => {
+        const mockAction = jest.fn();
+        const testCharacter = {
+          id: 1,
+          name: "Paco",
+          status: "Alive",
+          species: "Human",
+          image: "",
+        };
+
+        render(
+          <BrowserRouter>
+            <CharacterProvider>
+              <CharacterComponent character={testCharacter} />
+            </CharacterProvider>
+          </BrowserRouter>
+        );
+
+        const expectedDeleteFavButton = screen.getByRole("button", {
+          name: /delete-favourite/i,
+        });
+        expectedDeleteFavButton.onclick = mockAction;
+        userEvent.click(expectedDeleteFavButton);
+        expect(mockAction).toHaveBeenCalled();
+      });
     });
   });
 
