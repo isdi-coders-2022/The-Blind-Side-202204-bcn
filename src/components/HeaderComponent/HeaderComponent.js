@@ -18,12 +18,12 @@ const HeaderComponent = () => {
           <ul className="header__icon">
             <li>
               <NavLink to="/home">
-                <RiHome2Fill />
+                <RiHome2Fill title="Home" />
               </NavLink>
             </li>
             <li>
               <NavLink to="/favorites">
-                <BsFillHeartFill />
+                <BsFillHeartFill title="Favourites" />
               </NavLink>
             </li>
           </ul>
