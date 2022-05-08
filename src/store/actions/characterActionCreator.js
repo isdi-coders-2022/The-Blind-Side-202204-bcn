@@ -1,9 +1,7 @@
 import {
   characterAdd,
-  characterDelete,
   characterLoad,
   characterLoadLocal,
-  characterModify,
 } from "./characterActionType";
 
 export const charactersLoader = (payload) => ({
@@ -13,16 +11,6 @@ export const charactersLoader = (payload) => ({
 
 export const characterAdder = (character) => ({
   type: characterAdd,
-  character: character,
-});
-
-export const characterModifier = (character) => ({
-  type: characterModify,
-  character: character,
-});
-
-export const characterDeleter = (character) => ({
-  type: characterDelete,
   character: character,
 });
 

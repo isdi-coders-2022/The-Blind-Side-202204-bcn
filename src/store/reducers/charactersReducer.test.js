@@ -1,4 +1,7 @@
-import { characterLoad } from "../actions/characterActionType";
+import {
+  characterLoad,
+  characterLoadLocal,
+} from "../actions/characterActionType";
 import charactersReducer from "./charactersReducer";
 
 describe("Given the chractersReducer function", () => {
@@ -76,6 +79,52 @@ describe("Given the chractersReducer function", () => {
 
       const newCharactersLoaded = charactersReducer(
         currentCharacters,
+        actionType
+      );
+
+      expect(newCharactersLoaded).toEqual(expectedObjectResult);
+    });
+  });
+
+  describe("When it receives two characters and action type characterLoadLocal", () => {
+    test("Then it should return an object including the given characters", () => {
+      const currentLocalCharacters = {
+        0: {
+          id: 1,
+          name: "Rick Sanchez",
+          status: "Alive",
+          species: "Human",
+        },
+        1: {
+          id: 2,
+          name: "Morty Smith",
+          status: "Alive",
+          species: "Human",
+        },
+      };
+
+      const actionType = {
+        type: characterLoadLocal,
+        payload: currentLocalCharacters,
+      };
+
+      const expectedObjectResult = {
+        0: {
+          id: 1,
+          name: "Rick Sanchez",
+          status: "Alive",
+          species: "Human",
+        },
+        1: {
+          id: 2,
+          name: "Morty Smith",
+          status: "Alive",
+          species: "Human",
+        },
+      };
+
+      const newCharactersLoaded = charactersReducer(
+        currentLocalCharacters,
         actionType
       );
 
