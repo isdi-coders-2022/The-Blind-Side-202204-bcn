@@ -43,7 +43,7 @@ const PagerComponent = () => {
       <div className="pager">
         <Button
           nameClass={"icon-container"}
-          text={<BsCaretLeftFill />}
+          text={<BsCaretLeftFill title="previous-page" />}
           action={() => {
             loadCharacters(state.info.prev);
           }}
@@ -52,7 +52,7 @@ const PagerComponent = () => {
 
         <Button
           nameClass={"icon-container"}
-          text={<BsCaretRightFill />}
+          text={<BsCaretRightFill title="next-page" />}
           action={() => {
             loadCharacters(state.info.next);
           }}
