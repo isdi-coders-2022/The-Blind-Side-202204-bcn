@@ -4,9 +4,19 @@ import CharacterDetailComponent from "./CharacterDetailComponent";
 describe("Given a CharacterDetailComponent", () => {
   describe("When it is instantiated", () => {
     test("Then it should create five li elements", () => {
-      render(<CharacterDetailComponent />);
+      const testCharacter = [
+        {
+          id: 1,
+          name: "Jerry Smith",
+          status: "Alive",
+          species: "Human",
+          image: "",
+        },
+      ];
 
-      const expectedNumOfLi = 5;
+      render(<CharacterDetailComponent character={testCharacter} />);
+
+      const expectedNumOfLi = 3;
 
       const totalList = screen.getAllByRole("listitem");
 
