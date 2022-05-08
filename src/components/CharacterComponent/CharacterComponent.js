@@ -14,6 +14,8 @@ const CharacterComponent = ({ character }) => {
       <div className="character">
         <div className="character__image-container">
           <img
+            width={300}
+            height={300}
             className="character__image"
             src={image}
             alt={`${name} from Rick and Morty Show`}
@@ -25,7 +27,7 @@ const CharacterComponent = ({ character }) => {
         </span>
         <div className="character__icons">
           <Button
-            text={<IoClose />}
+            text={<IoClose title="delete-favourite" />}
             nameClass={"icon-container icon-container--delete"}
             action={(event) => {
               event.preventDefault();
@@ -35,13 +37,13 @@ const CharacterComponent = ({ character }) => {
 
           <Link to={`/detail/${id}`}>
             <Button
-              text={<FaInfo />}
+              text={<FaInfo title="more-info" />}
               nameClass={"icon-container icon-container--info"}
             />
           </Link>
 
           <Button
-            text={<FaHeart />}
+            text={<FaHeart title="add-favourite" />}
             nameClass={"icon-container icon-container--favourite"}
             action={(event) => {
               event.preventDefault();
