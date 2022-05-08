@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Button from "../Button/Button";
 import useApi from "../../store/hooks/useApi";
+import { FormComponentyStyle } from "./FormComponentStyle";
 
 const FormComponent = ({ favouritedCharacters }) => {
   const { addCharacter } = useApi();
@@ -41,55 +42,64 @@ const FormComponent = ({ favouritedCharacters }) => {
   const [newCharacterGender, setnewCharacterGender] = useState("");
 
   return (
-    <form className="addCharacterForm" onSubmit={formSubmit} autoComplete="off">
-      <label htmlFor="name">
-        Character name
-        <input
-          required
-          id="name"
-          autoFocus
-          type={"text"}
-          placeholder={"Name"}
-          value={newCharacterName}
-          onChange={(event) => setnewCharacterName(event.target.value)}
-        />
-      </label>
-      <label htmlFor="status">
-        Status
-        <input
-          required
-          id="status"
-          type={"text"}
-          placeholder={"Status"}
-          value={newCharacterStatus}
-          onChange={(event) => setnewCharacterStatus(event.target.value)}
-        />
-      </label>
-      <label htmlFor="species">
-        Species
-        <input
-          required
-          id="species"
-          type={"text"}
-          placeholder={"Species"}
-          value={newCharacterSpecies}
-          onChange={(event) => setnewCharacterSpecies(event.target.value)}
-        />
-      </label>
+    <FormComponentyStyle>
+      <div className="addCharacterForm-main">
+        <h2>Create your own Rick and Morty Character</h2>
+        <form
+          className="addCharacterForm"
+          onSubmit={formSubmit}
+          autoComplete="off"
+        >
+          <label htmlFor="name">
+            Character name
+            <input
+              required
+              id="name"
+              autoFocus
+              type={"text"}
+              placeholder={"Name"}
+              value={newCharacterName}
+              onChange={(event) => setnewCharacterName(event.target.value)}
+            />
+          </label>
+          <label htmlFor="status">
+            Status
+            <input
+              required
+              id="status"
+              type={"text"}
+              placeholder={"Status"}
+              value={newCharacterStatus}
+              onChange={(event) => setnewCharacterStatus(event.target.value)}
+            />
+          </label>
+          <label htmlFor="species">
+            Species
+            <input
+              required
+              id="species"
+              type={"text"}
+              placeholder={"Species"}
+              value={newCharacterSpecies}
+              onChange={(event) => setnewCharacterSpecies(event.target.value)}
+            />
+          </label>
 
-      <label htmlFor="gender">
-        Gender
-        <input
-          required
-          id="gender"
-          type={"text"}
-          placeholder={"Gender"}
-          value={newCharacterGender}
-          onChange={(event) => setnewCharacterGender(event.target.value)}
-        />
-      </label>
-      <Button nameClass={"form-submit"} text={"Create"}></Button>
-    </form>
+          <label htmlFor="gender">
+            Gender
+            <input
+              required
+              id="gender"
+              type={"text"}
+              placeholder={"Gender"}
+              value={newCharacterGender}
+              onChange={(event) => setnewCharacterGender(event.target.value)}
+            />
+          </label>
+          <Button nameClass={"form-submit"} text={"Create"}></Button>
+        </form>
+      </div>
+    </FormComponentyStyle>
   );
 };
 
