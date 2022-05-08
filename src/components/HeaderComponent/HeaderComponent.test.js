@@ -1,10 +1,18 @@
-const { render, screen } = require("@testing-library/react");
-const { default: HeaderComponent } = require("./HeaderComponent");
+import { render, screen } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import CharacterProvider from "../../store/contexts/CharacterProvider";
+import HeaderComponent from "./HeaderComponent";
 
 describe("Given a HeaderComponent Component", () => {
-  describe("When it's call)", () => {
+  describe("When it's call", () => {
     test("Then it should render a HeaderComponent with 2 li item", () => {
-      render(<HeaderComponent />);
+      render(
+        <BrowserRouter>
+          <CharacterProvider>
+            <HeaderComponent />
+          </CharacterProvider>
+        </BrowserRouter>
+      );
 
       const expectedNumOfLi = 2;
 
