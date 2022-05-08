@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import FormComponent from "./FormComponent";
@@ -39,7 +39,7 @@ describe("Given a FormComponent", () => {
       userEvent.type(speciesField, "c");
       userEvent.type(genderField, "d");
 
-      fireEvent.click(button);
+      userEvent.click(button);
 
       expect(mockAddCharacter).toBeCalled();
     });
@@ -59,9 +59,8 @@ describe("Given a FormComponent", () => {
       userEvent.type(speciesField, "c");
       userEvent.type(genderField, "d");
 
-      fireEvent.click(button);
+      userEvent.click(button);
 
-      expect(mockAddCharacter).toBeCalled();
       const createdCharacter = mockAddCharacter.mock.calls[0][0];
 
       expect(createdCharacter.name).toBe("a");
