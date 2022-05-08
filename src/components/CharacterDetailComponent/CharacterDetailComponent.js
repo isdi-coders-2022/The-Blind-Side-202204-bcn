@@ -11,18 +11,29 @@ const CharacterDetailComponent = ({ character }) => {
           <div className="character__image-container">
             <img className="character__image" src={image} alt={name} />
           </div>
-          <div>
+          <div className="character__text">
             <h2>{name}</h2>
             <ul>
-              <li>Species: {species}</li>
-              <li>Status: {status}</li>
-              <li>Gender: {gender}</li>
+              <li>
+                <div className="character__text--title">Species: </div>
+                <div className="character__text--detail">{species}</div>
+              </li>
+              <li>
+                <div className="character__text--title">Status: </div>{" "}
+                <div className="character__text--detail">{status}</div>
+              </li>
+              <li>
+                <div className="character__text--title">Gender: </div>{" "}
+                <div className="character__text--detail">{gender}</div>
+              </li>
             </ul>
-            <div className="icon-container">
-              <div className="character__icons">
-                <MdRefresh className="icon-container icon-container--info" />
-                <FaHeart className="icon-container icon-container--favourite" />
-              </div>
+            <div className="character__icons">
+              <button className="icon-container icon-container--info">
+                <MdRefresh />
+              </button>
+              <button className="icon-container icon-container--favourite">
+                <FaHeart />
+              </button>
             </div>
           </div>
         </div>
