@@ -18,19 +18,34 @@ describe("Given a pagerComponent", () => {
       expect(textPager).toBeInTheDocument();
     });
   });
-  describe("When it is call", () => {
-    test("Then it should render two buttons", () => {
-      const expectedNumberofButtons = 2;
 
+  describe("When it is call", () => {
+    test("Then it should render a titled 'previous-page' button", () => {
       render(
         <CharacterProvider>
           <PagerComponent />
         </CharacterProvider>
       );
 
-      const numberofButtons = screen.getAllByRole("button");
+      const previousPageButton = screen.getByRole("button", {
+        name: /previous-page/i,
+      });
 
-      expect(numberofButtons.length).toBe(expectedNumberofButtons);
+      expect(previousPageButton).toBeInTheDocument();
+    });
+
+    test("Then it should render a titled 'next-page' button", () => {
+      render(
+        <CharacterProvider>
+          <PagerComponent />
+        </CharacterProvider>
+      );
+
+      const previousPageButton = screen.getByRole("button", {
+        name: /next-page/i,
+      });
+
+      expect(previousPageButton).toBeInTheDocument();
     });
   });
 });
