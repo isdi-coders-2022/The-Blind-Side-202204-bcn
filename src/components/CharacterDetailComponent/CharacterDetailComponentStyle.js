@@ -36,6 +36,33 @@ export const CharacterDetailStyles = styled.div`
       object-fit: cover;
     }
 
+    &__text {
+      color: white;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      padding: none;
+    }
+
+    &__text--title {
+      color: #b2df28;
+      margin-right: -40px;
+    }
+    ul {
+      list-style-type: none;
+      margin: 0px 0px 20px 0px;
+      padding: 0px 0px 20px 0px;
+    }
+
+    li {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      padding: none;
+      margin: none;
+    }
+
     &__icons {
       display: flex;
       flex-direction: row;
@@ -52,6 +79,7 @@ export const CharacterDetailStyles = styled.div`
         justify-content: center;
         align-items: center;
         color: white;
+        border: none;
         &--info {
           background-color: #00b5cc;
         }
