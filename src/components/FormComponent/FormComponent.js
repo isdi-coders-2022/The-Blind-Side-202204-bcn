@@ -7,6 +7,15 @@ const FormComponent = ({ favouritedCharacters }) => {
 
   const formSubmit = (event) => {
     event.preventDefault();
+
+    const newCharacter = {
+      name: newCharacterName,
+      status: newCharacterStatus,
+      species: newCharacterSpecies,
+      gender: newCharacterGender,
+      image: "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
+    };
+
     for (const property in newCharacter) {
       newCharacter[property] = newCharacter[property].trim();
     }
@@ -30,15 +39,6 @@ const FormComponent = ({ favouritedCharacters }) => {
   const [newCharacterStatus, setnewCharacterStatus] = useState("");
   const [newCharacterSpecies, setnewCharacterSpecies] = useState("");
   const [newCharacterGender, setnewCharacterGender] = useState("");
-
-  const newCharacter = {
-    id: "createdcharacter",
-    name: newCharacterName,
-    status: newCharacterStatus,
-    species: newCharacterSpecies,
-    gender: newCharacterGender,
-    image: "https://rickandmortyapi.com/api/character/avatar/19.jpeg",
-  };
 
   return (
     <form className="addCharacterForm" onSubmit={formSubmit} autoComplete="off">
